@@ -1,0 +1,28 @@
+:root{
+    --bg: black;
+    --text: white;
+}
+body{
+    background: var(--bg) ;
+    color: var(--text);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    user-select: none;
+}
+label{
+    background-color: grey;
+    height: 70px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+
+
+
