@@ -1,28 +1,63 @@
-:root{
-    --bg: black;
-    --text: white;
-}
-body{
-    background: var(--bg) ;
+/* Default theme (light) */
+.page {
+    --bg: #ffffff;
+    --text: #000000;
+  
+    background: var(--bg);
     color: var(--text);
-    height: 100vh;
+    font-family: Arial, sans-serif;
+    transition: background 0.5s ease, color 0.5s ease;
+    min-height: 100vh;
+    margin: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    user-select: none;
-}
-label{
-    background-color: grey;
-    height: 70px;
-    width: 150px;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+  }
+  
+  /* Hide the checkbox */
+  #dark-toggle {
+    display: none;
+  }
+  
+  /* Toggle switch styling */
+  .switch {
+    width: 60px;
+    height: 30px;
+    background: #ccc;
+    border-radius: 30px;
     position: relative;
-}
-
-
-
-
-
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: inline-block;
+    margin: 20px auto;
+  }
+  
+  /* The knob */
+  .switch::after {
+    content: "☀️";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  /* ✅ Apply dark mode when checkbox is checked */
+  #dark-toggle:checked ~ .page {
+    --bg: #121212;
+    --text: #f5f5f5;
+  }
+  
+  #dark-toggle:checked + .switch::after {
+    transform: translateX(30px);
+    content: "🌙";
+  }
+  
